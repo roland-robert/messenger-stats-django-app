@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'properties.css' %}">
+
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Messenger Stats</title>
+</head>
+<body>
+	<div class="wrapper">
+			<div class="navbar">
+				<!-- <img class="logo" src="{% static 'images/logo.png' %}" alt="My image"> -->
+				<label class="logo">Messenger Stats</label>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="{% url 'mainapp:leaderboard' %}">Leaderboard</a></li>
+					<li><a href="{% url 'mainapp:personal_stats' %}">Personal Stats</a></li>
+					<li><a href="{% url 'mainapp:progress' %}">Progress</a></li>
+					<li><a href="{% url 'mainapp:progress_versus' %}">Compare Progress</a></li>
+					<li><a href="{% url 'mainapp:best_message' %}">Best Messages</a></li>
+					<li><a href="{% url 'mainapp:feedback' %}">Feedback</a></li>
+					<!-- <li><a href="#">Contact</a></li> -->
+					<!-- <li><a href="#">Feedback</a></li> -->
+
+					{% if user.is_authenticated %}
+                    <li><a href="{% url 'accounts:profile' %}" class="highlight">Profil</a></li>
+					<li>
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                    <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+                    {% endif %}
+
+				</ul>
+			</div>
+
+		<div class="center">
+        {% block content %}{% endblock content %}
+    	</div>
+	</div>
+</body>
+</html>

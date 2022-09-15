@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="center">
+        <h1>Top Active Group Chat members</h1>
+        <div class="DIVpodium">
+          <svg width="290" height="100" xmlns="http://www.w3.org/2000/svg" class="SVGpodium">
+             <rect stroke="#000" stroke-width="3" id="svg_1" height="85" width="90" y="5" x="100" fill="#fff"/>
+             <rect stroke="#000" stroke-width="3" id="svg_2" height="55" width="90" y="35" x="10" fill="#fff"/>
+             <rect stroke="#000" stroke-width="3" id="svg_3" height="35" width="90" y="55" x="190" fill="#fff"/>
+          </svg>
+          <p class="Mediallepodium N1podium">&#129351</p>
+          <p class="Mediallepodium N2podium">&#129352</p>
+          <p class="Mediallepodium N3podium">&#129353</p>
+
+          <p class="Nompodium N1Ppodium">{{ top1 }}</p>
+          <p class="Nompodium N2Ppodium">{{ top2 }}</p>
+          <p class="Nompodium N3Ppodium">{{ top3 }}</p>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

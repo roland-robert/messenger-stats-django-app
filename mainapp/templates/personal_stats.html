@@ -1,0 +1,16 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="formContainer">
+        <form action="{% url 'mainapp:personal_stats' %}" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Submit" class="submitbutton">
+        </form>
+    </div>
+    <div class="formResponse">
+    {% block response %}{% endblock response %}
+    </div>
+</div>
+{% endblock content %}

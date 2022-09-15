@@ -1,0 +1,11 @@
+
+
+body{
+    /* --background_color: rgb(232, 232, 164); */
+    /* --background_color: rgb(245, 245, 240); */
+    --background_color: rgb(255,255,255);
+    --dark_text_color:rgb(5, 7, 20);
+    --text_color:rgb(10, 15, 40);
+    --button_select: rgb(255,175,75);
+    --navbar_background: rgb(20, 15, 5,0.25);
+}

@@ -1,0 +1,54 @@
+{% extends "personal_stats.html" %}
+
+{% block response %}
+<h3>{{ name }}'s stats From {{ start_date }} to {{ end_date}}</h3>
+<dl>
+  <dt>Total messages sent</dt>
+  <dd>-{{ message_count }}</dd><br>
+  <dt>Total characters sent</dt>
+  <dd>- {{ character_count }}</dd><br>
+  <dt>Average message length </dt>
+  <dd>- {{ average_message_length }}</dd><br>
+  <dt>Number of times expression "{{ word }}" has been used</dt>
+  <dd>- {{ word_count }}</dd><br>
+</dl>
+<details>
+  <summary>Details for Reacts</summary>
+  <dl>
+  <dt>Received Reacts</dt>
+  <dd>
+    {% for key, value in received_emoji_count_dict.items %}
+    {{key}} - {{value}} |
+    {% endfor %}
+    Total : {{ total_received }}
+  </dd><br>
+  <dt>Distributed Reacts</dt>
+  <dd>
+    {% for key, value in distributed_emoji_count_dict.items %}
+    {{key}} - {{value}} |
+    {% endfor %}
+    Total : {{ total_distributed }}
+  </dd><br>
+  </dl>
+</details>
+<details>
+  <summary>User details for reacts </summary>
+  <dl>
+  <dt>Users who sent {{ name }} reacts</dt>
+  <dd class="dark-grey">
+    <b>
+    {% for key, value in received_emoji_name_dict.items %}
+    {{key}} - {{value}} |
+    {% endfor %}
+    </b>
+  </dd><br>
+    <dt>Users who received reacts from {{ name }}</dt>
+  <dd class="dark-grey"> <b>
+    {% for key, value in distributed_emoji_name_dict.items %}
+    {{key}} - {{value}} |
+    {% endfor %}
+    </b>
+  </dd><br>
+  </dl>
+</details>
+{% endblock response %}

@@ -1,0 +1,14 @@
+{% extends "base_template.html" %}
+
+{% block content %}
+<div class="row">
+
+<div class="formContainer">
+    <form action="{% url 'mainapp:feedback' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" class="submitbutton">
+    </form>
+</div>
+</div>
+{% endblock content %}

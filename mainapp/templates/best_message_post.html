@@ -1,0 +1,16 @@
+{% extends "best_message.html" %}
+
+{% block response %}
+<dl>
+  {% for message in top_list %}
+    <dt>{{ message.sender }} - {{ message.date }} </dt>
+    <dd class="details">
+      {{ message.message }}
+    </dd>
+      <dt>Reacts : </dt>
+    <dd class="details">
+      {{ message.reactions }}
+    </dd><br>
+{% endfor %}
+</dl>
+{% endblock response %}
