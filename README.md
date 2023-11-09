@@ -44,8 +44,15 @@ All you will need is Python 3.9+, django 3.9+ and matplotlib.
 
 ``pip install django matplotlib``
 
+Run migrations and create sqlite file:
+
+``python manage.py makemigrations``
+``python manage.py migrate``
+
+Go to settings and set your secret key (messenger-stats-django-app/settings.py)
+
 then run your local server with :
 
 ``python manage.py runserver``
 
-then connect to the server on a browser with the ip given
+then connect to the server on a browser with the ip given (http://127.0.0.1:8000)
